@@ -1,68 +1,77 @@
-// Função para área de um círculo
-função CalcularAreaCirculo(raio: Real): Real {
-    retorne 3.14 * raio * raio
-}
-// Função para área de um retângulo
-função CalcularAreaRetangulo(largura: Real, altura: Real): Real {
-    retorne largura * altura
-}
-// Função para área de um triângulo
-função CalcularAreaTriangulo(base: Real, altura: Real): Real {
-    retorne (base * altura) / 2
-}
-// Função para adicionar uma forma
-função AdicionarForma(nome, área) {
-    forma = nova Forma
+Classe Circulo:
+    raio
+
+    Função CalcularArea() {
+        Retorne 3.14 * raio * raio
+    }
+
+Classe Retangulo:
+    largura
+    altura
+
+    Função CalcularArea() {
+        Retorne largura * altura
+    }
+
+Classe Triangulo:
+    base
+    altura
+
+    Função CalcularArea() {
+        Retorne (base * altura) / 2
+    }
+
+
+Função AdicionarForma(nome, área) {
+    forma = Nova Forma
     forma.Nome = nome
     forma.Área = área
-    formas.adicionar(forma)
+    formas.Adicionar(forma)
 }
-função main() {
-    formas: lista de forma
 
-        escreva("----- UNIVERSO INTERATIVO -----")
-        escreva("DIGITE [1] PARA CRIAR CIRCULO")
-        escreva("DIGITE [2] PARA CRIAR RETANGULO")
-        escreva("DIGITE [3] PARA CRIAR TRIANGULO")
-        escreva("DIGITE [4] PARA FORMAS CADASTRADAS")
-        escreva("DIGITE [5] PARA SAIR")
-        escreva("______________________________")
 
-        opcao = leia("Escolha uma opção: ")
+Função main() {
+    formas: Lista de Forma
 
-        // Opção 1: CRIAR CIRCULO
-        se opcao == 1 {
-            raio = leia("Raio: ")
-            área = CalcularAreaCirculo(raio)
-            AdicionarForma("Círculo", área)
+    Escreva("----- UNIVERSO INTERATIVO -----")
+    
+    // Menu
+    Enquanto Verdadeiro {
+        Escreva("DIGITE [1] PARA CRIAR CIRCULO")
+        Escreva("DIGITE [2] PARA CRIAR RETANGULO")
+        Escreva("DIGITE [3] PARA CRIAR TRIANGULO")
+        Escreva("DIGITE [4] PARA FORMAS CADASTRADAS")
+        Escreva("DIGITE [5] PARA SAIR")
+        
+        opcao = Leia("Escolha uma opção: ")
+
+        Se opcao == 1 {
+            raio = Leia("Raio: ")
+            AdicionarForma("Círculo", Circulo(raio).CalcularArea())
         } 
-        // Opção 2: CRIAR RETANGULO
-        se opcao == 2 {
-            largura = leia("Largura: ")
-            altura = leia("Altura: ")
-            área = CalcularAreaRetangulo(largura, altura)
-            AdicionarForma("Retângulo", área)
+        Se opcao == 2 {
+            largura = Leia("Largura: ")
+            altura = Leia("Altura: ")
+            AdicionarForma("Retângulo", Retangulo(largura, altura).CalcularArea())
         } 
-        // Opção 3: CRIAR TRIANGULO
-        se opcao == 3 {
-            base = leia("Base: ")
-            altura = leia("Altura: ")
-            área = CalcularAreaTriangulo(base, altura)
-            AdicionarForma("Triângulo", área)
+        Se opcao == 3 {
+            base = Leia("Base: ")
+            altura = Leia("Altura: ")
+            AdicionarForma("Triângulo", Triangulo(base, altura).CalcularArea())
         } 
-        // Opção 4: FORMAS CADASTRADAS
-        se opcao == 4 {
-                escreva("Nome: ", forma.Nome)
-                escreva("Área: ", forma.Área)
-            } 
-        // Opção 5: SAIR
-        se opcao == 5 {
-            sair
+        Se opcao == 4 {
+                Escreva("Nome: ", forma.Nome)
+                Escreva("Área: ", forma.Área)
+            }
+        } 
+        Se opcao == 5 {
+            Sair
         } 
         senão {
-            escreva("Opção inválida.")
+            Escreva("Opção inválida.")
         }
     }
 }
 
+}
 
