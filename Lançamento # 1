@@ -31,8 +31,6 @@ Função AdicionarForma(nome, área) {
 
 
 Função main() {
-    formas: Lista de Forma
-
     Escreva("----- UNIVERSO INTERATIVO -----")
     
     // Menu
