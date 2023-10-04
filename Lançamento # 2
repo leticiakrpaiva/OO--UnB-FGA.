@@ -1,0 +1,68 @@
+formas = []
+
+class circulo:
+    def __init__(self, raio):
+        self.raio = raio
+
+    def calcular_area(self):
+        return 3.14 * self.raio * self.raio
+
+
+class retangulo:
+    def __init__(self, largura, altura):
+        self.largura = largura
+        self.altura = altura
+
+    def calcular_area(self):
+        return self.largura * self.altura
+
+
+class triangulo:
+    def __init__(self, base, altura):
+        self.base = base
+        self.altura = altura
+
+    def calcular_area(self):
+        return (self.base * self.altura) / 2
+
+
+def adc_forma(nome, area):
+    forma = {"Nome": nome, "Área": area}
+    formas.append(forma)
+
+
+def main():
+    print("----- UNIVERSO INTERATIVO -----")
+
+    while True:
+        print("DIGITE [1] PARA CRIAR CÍRCULO")
+        print("DIGITE [2] PARA CRIAR RETÂNGULO")
+        print("DIGITE [3] PARA CRIAR TRIÂNGULO")
+        print("DIGITE [4] PARA FORMAS CADASTRADAS")
+        print("DIGITE [5] PARA SAIR")
+
+        opcao = input("Escolha uma opção: ")
+
+        if opcao == "1":
+            raio = float(input("Raio: "))
+            adc_forma("círculo", circulo(raio).calcular_area())
+        elif opcao == "2":
+            largura = float(input("Largura: "))
+            altura = float(input("Altura: "))
+            adc_forma("retângulo", retangulo(largura, altura).calcular_area())
+        elif opcao == "3":
+            base = float(input("Base: "))
+            altura = float(input("Altura: "))
+            adc_forma("triângulo", triangulo(base, altura).calcular_area())
+        elif opcao == "4":
+            for forma in formas:
+                print("Nome:", forma["Nome"])
+                print("Área:", forma["Área"])
+        elif opcao == "5":
+            break
+        else:
+            print("Opção inválida.")
+
+
+if __name__ == "__main__":
+    main()  
