@@ -5,7 +5,7 @@ Possui as opções:
 - Adicionar forma
 - Verificar forma cadastras
 
-Lançamento 2: Conversão do pseudocódigo anterior para python.
+Lançamento 2: Conversão do pseudocódigo anterior para Python.
 
 Lançamento 3: Projeto de UML do jogo da cobrinha;
 Possui:
